@@ -6,6 +6,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Typography,
 } from "@mui/material";
 
 function DialogDeleteTaskCard({ setDialogDeleteTask, deleteTask, task }) {
@@ -18,16 +19,18 @@ function DialogDeleteTaskCard({ setDialogDeleteTask, deleteTask, task }) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          Estas seguro de querer borrar esta tarea?
+          Estás seguro de querer borrar esta tarea?
         </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            {task.title}
-          </DialogContentText>
+        <DialogContent dividers="true">
+          <Typography id="alert-dialog-description">{task.title}</Typography>
         </DialogContent>
         <DialogActions>
-          <Button onClick={deleteTask}>Confirmar</Button>
-          <Button onClick={() => setDialogDeleteTask(false)}>Cerrar</Button>
+          <Button variant="outlined" onClick={() => setDialogDeleteTask(false)}>
+            Cerrar
+          </Button>
+          <Button color="primary" variant="contained" onClick={deleteTask}>
+            Confirmar
+          </Button>
         </DialogActions>
       </Dialog>
     </Box>

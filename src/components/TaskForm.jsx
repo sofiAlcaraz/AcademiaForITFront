@@ -20,10 +20,13 @@ function TaskForm({
   handleSubmit,
   task,
 }) {
+  const handleClose = () => {
+    setModalForm(false);
+  };
   return (
     <Modal
       open={true}
-      onClose={() => setModalForm({ open: false, mode: null })}
+      onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
@@ -66,8 +69,8 @@ function TaskForm({
             onChange={handleChange}
           />
           <StatusFormSelect handleChange={handleChange} status={task.status} />
-
-          <Button type="submit" variant="contained">
+          <Button onClick={handleClose}>Cancelar</Button>
+          <Button color="primary" type="submit" variant="contained">
             Guardar
           </Button>
         </Box>
