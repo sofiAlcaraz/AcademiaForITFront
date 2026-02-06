@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Alert, Box, Stack } from "@mui/material";
+import { Alert, Box } from "@mui/material";
 import NavBar from "./components/NavBar";
 import DialogDeleteTaskCard from "./components/DialogDeleteTaskCard";
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
 
 function App() {
+  const apiBaseUrl = import.meta.env.VITE_API_ACADEMIAFORITBACKEND;
   const [loading, setLoading] = useState(true);
   const [modalForm, setModalForm] = useState({ open: false, mode: null });
   const [dialogDeleteTask, setDialogDeleteTask] = useState(false);
@@ -16,7 +17,6 @@ function App() {
     open: false,
   });
   const [tasksList, setTasksList] = useState([]);
-
   const inicialTask = {
     id: "",
     title: "",
@@ -24,10 +24,10 @@ function App() {
     status: "Pendiente",
     createAt: "",
   };
-
   const [task, setTask] = useState(inicialTask);
+
   const getTasks = () => {
-    fetch("http://localhost:3000/api/tasks")
+    fetch(apiBaseUrl)
       .then((response) => response.json())
       .then((data) => setTasksList(data))
       .catch((error) => {
@@ -55,7 +55,7 @@ function App() {
     e.preventDefault();
 
     if (modalForm.mode === "create") {
-      fetch("http://localhost:3000/api/tasks", {
+      fetch(apiBaseUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ function App() {
           });
         });
     } else {
-      fetch(`http://localhost:3000/api/tasks/${task.id}`, {
+      fetch(apiBaseUrl + task.id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -113,7 +113,7 @@ function App() {
 
   const deleteTask = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3000/api/tasks/${task.id}`, {
+    fetch(apiBaseUrl + task.id, {
       method: "DELETE",
     })
       .then((response) => response.json())
