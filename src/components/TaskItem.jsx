@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -9,15 +10,24 @@ import {
 
 function TaskItem({ task, setTask, setModalForm, setDialogDeleteTask }) {
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <Chip
-        label={task.status}
-        variant="outlined"
-        color="secondary"
-        sx={{ display: "flex", right: "0" }}
-      />
-
+    <Card sx={{ minWidth: 275, position: "relative" }}>
       <CardContent>
+        <Box
+          sx={{
+            position: "absolute",
+            top: 1,
+            right: 2,
+          }}
+        >
+          <Chip
+            label={task.status}
+            variant="contained"
+            color="secondary"
+            size="small"
+            sx={{ display: "flex", right: "0" }}
+          />
+        </Box>
+
         <Typography variant="h5" component="div">
           {task.title}
         </Typography>
