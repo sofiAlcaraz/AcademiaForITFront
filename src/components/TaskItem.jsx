@@ -10,7 +10,7 @@ import {
 
 function TaskItem({ task, setTask, setModalForm, setDialogDeleteTask }) {
   return (
-    <Card sx={{ minWidth: 275, position: "relative" }}>
+    <Card sx={{ position: "relative", maxWidth: "20rem" }}>
       <CardContent>
         <Box
           sx={{
@@ -28,11 +28,18 @@ function TaskItem({ task, setTask, setModalForm, setDialogDeleteTask }) {
           />
         </Box>
 
-        <Typography variant="h5" component="div">
+        <Typography
+          sx={{ wordBreak: "break-word" }}
+          variant="h5"
+          component="div"
+        >
           {task.title}
         </Typography>
 
-        <Typography sx={{ color: "text.secondary", mb: 1.5 }} variant="body2">
+        <Typography
+          sx={{ color: "text.secondary", mb: 1.5, wordBreak: "break-word" }}
+          variant="body2"
+        >
           {task.description ? task.description : "...no hay descripción"}
         </Typography>
       </CardContent>
