@@ -9,7 +9,6 @@ import TaskForm from "./components/TaskForm";
 function App() {
   const [loading, setLoading] = useState(true);
   const [modalForm, setModalForm] = useState({ open: false, mode: null });
-
   const [dialogDeleteTask, setDialogDeleteTask] = useState(false);
   const [alert, setAlert] = useState({
     type: "",
@@ -17,22 +16,32 @@ function App() {
     open: false,
   });
   const [tasksList, setTasksList] = useState([]);
-  const [task, setTask] = useState({
+
+  const inicialTask = {
     id: "",
     title: "",
     description: "",
     status: "Pendiente",
     createAt: "",
-  });
+  };
 
-  useEffect(() => {
+  const [task, setTask] = useState(inicialTask);
+  const getTasks = () => {
     fetch("http://localhost:3000/api/tasks")
       .then((response) => response.json())
       .then((data) => setTasksList(data))
-      .catch(() => {
-        console.log("error");
+      .catch((error) => {
+        setAlert({
+          type: "error",
+          message: error.message,
+          open: true,
+        });
       })
       .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    getTasks();
   }, []);
 
   const handleChange = (e) => {
@@ -55,7 +64,8 @@ function App() {
       })
         .then((response) => response.json())
         .then((data) => {
-          setTasksList((prev) => [...prev, data.newTask]);
+          getTasks();
+          setTask(inicialTask);
           setAlert({
             type: "success",
             message: data.message,
@@ -85,7 +95,8 @@ function App() {
       })
         .then((response) => response.json())
         .then((data) => {
-          setTasksList((prev) => [...prev, data.updatedTask]);
+          getTasks();
+          setTask(inicialTask);
           setAlert({ type: "success", message: data.message, open: true });
         })
         .finally(() =>
@@ -107,7 +118,8 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setTasksList((prev) => prev.filter((t) => t.id !== task.id));
+        getTasks();
+        setTask(inicialTask);
         setAlert({ type: "success", message: data.message, open: true });
       })
       .finally(() => setDialogDeleteTask(false))

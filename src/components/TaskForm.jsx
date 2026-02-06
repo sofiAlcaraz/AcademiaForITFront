@@ -60,7 +60,6 @@ function TaskForm({
             label="Descripción"
             name="description"
             defaultValue={task.decription}
-            required
             multiline
             maxRows={10}
             minRows={10}

@@ -7,13 +7,15 @@ function StatusFormSelect({ handleChange, status }) {
       <Select
         labelId="status-form"
         id="status-form-id"
-        name="Estado"
+        name="status"
         required
         value={status}
         label="Estado"
         onChange={handleChange}
       >
-        <MenuItem value={"Pendiente"}>Pendiente</MenuItem>
+        <MenuItem autoFocus value={"Pendiente"}>
+          Pendiente
+        </MenuItem>
         <MenuItem value={"En Progreso"}>En progreso</MenuItem>
         <MenuItem value={"Terminado"}>Terminado</MenuItem>
       </Select>
