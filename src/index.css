@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 html,
@@ -7,4 +8,5 @@ body,
 #root {
   height: 100%;
   margin: 0;
+  background-color: #110a26;
 }
