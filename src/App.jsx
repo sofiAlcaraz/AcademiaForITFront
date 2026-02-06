@@ -141,7 +141,13 @@ function App() {
       )}
       {alert.open && (
         <Alert
-          sx={{ position: "fixed", bottom: "0", right: "0", margin: "1rem" }}
+          sx={{
+            position: "fixed",
+            bottom: "0",
+            right: "0",
+            margin: "1rem",
+            zIndex: "100",
+          }}
           variant="filled"
           severity={alert.type}
           onClose={() =>
