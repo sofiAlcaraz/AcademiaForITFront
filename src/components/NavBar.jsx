@@ -32,6 +32,8 @@ function NavBar({ setModalForm }) {
             sx={{ display: "flex", flexGrow: 1, justifyContent: "flex-end" }}
           >
             <Button
+              color="primary"
+              variant="contained"
               onClick={() =>
                 setModalForm({
                   open: true,
