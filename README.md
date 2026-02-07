@@ -1,16 +1,65 @@
-# React + Vite
+# AcademiaForItFront
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto frontend CRUD de tareas que se comunica con un proyecto backend en Node + Express.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalaciones extra
 
-## React Compiler
+- MUI(Material UI): biblioteca de componentes React de código abierto.
+- eslint: detecta errores de sintaxis y problemas de estilo.
+- react-router-dom : para manejo de rutas.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Puedes instalar todas las dependencias ejecutando:
 
-## Expanding the ESLint configuration
+- npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Scripts para correr el proyecto
+
+1. npm run dev
+
+- start: ejecuta el proyecto
+
+---
+
+## Archivos adicionales
+
+- .gitignore: Para ignorar archivos y carpetas que no deberían subirse a Git.
+
+- eslint.config.js: Configuración de ESLint
+
+## Imagenes de API funcionando
+
+### Home
+
+![Imagen home](./src/assets/homeImage.png)
+
+### Crear tarea
+
+![Imagen formulario crear tarea](./src/assets/formCreateImage.png)
+
+![Imagen crear tarea exitoso](./src/assets/createSuccessImage.png)
+
+### Editar tarea
+
+![Imagen formulario editar tarea](./src/assets/formEditImage.png)
+![Imagen editar tarea exitoso](./src/assets/EditSuccessImage.png)
+
+### Borrar tarea
+
+![Imagen dialogo borrar tarea](./src/assets/deleteFormImage.png)
+![Imagen borrar tarea exitoso](./src/assets/deleteSuccessForm.png)
+
+### Listar tareas
+
+![Imagen tareas listadas](./src/assets/listTaskImage.png)
+
+### Ver tarea en nueva pestaña
+
+![Imagen pagina para ver tarea](./src/assets/pageTaskImage.png)
+
+### Url mal
+
+![Imagen pagina not found](./src/assets/notFoundImage.png)
