@@ -45,7 +45,7 @@ Puedes instalar todas las dependencias ejecutando:
 ### Editar tarea
 
 ![Imagen formulario editar tarea](./src/assets/formEditImage.png)
-![Imagen editar tarea exitoso](./src/assets/EditSuccessImage.png)
+![Imagen editar tarea exitoso](./src/assets/editSuccessImage.png)
 
 ### Borrar tarea
 
