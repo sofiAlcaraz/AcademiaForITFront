@@ -62,7 +62,7 @@ function TaskForm({
           <TextField
             label="Descripción"
             name="description"
-            defaultValue={task.decription}
+            defaultValue={task.description}
             multiline
             maxRows={10}
             minRows={10}

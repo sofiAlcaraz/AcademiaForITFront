@@ -7,6 +7,7 @@ import {
   Chip,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function TaskItem({ task, setTask, setModalForm, setDialogDeleteTask }) {
   return (
@@ -65,6 +66,7 @@ function TaskItem({ task, setTask, setModalForm, setDialogDeleteTask }) {
         >
           Borrar
         </Button>
+        <Link to={`/task/${task.id}`}>Ver más</Link>
       </CardActions>
     </Card>
   );
