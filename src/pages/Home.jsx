@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "../App.css";
-import { Alert, Box } from "@mui/material";
 import NavBar from "../components/NavBar";
 import DialogDeleteTaskCard from "../components/DialogDeleteTaskCard";
 import TaskList from "../components/TaskList";
 import TaskForm from "../components/TaskForm";
 import AlertMessage from "../components/AlertMessage";
+import { Box } from "@mui/material";
 
 function Home() {
   const apiBaseUrl = import.meta.env.VITE_API_ACADEMIAFORITBACKEND;
@@ -27,7 +27,7 @@ function Home() {
   };
   const [task, setTask] = useState(inicialTask);
 
-  const getTasks = () => {
+  const getTasks = useCallback(async () => {
     fetch(apiBaseUrl)
       .then((response) => response.json())
       .then((data) => setTasksList(data))
@@ -39,11 +39,11 @@ function Home() {
         });
       })
       .finally(() => setLoading(false));
-  };
+  }, [apiBaseUrl]);
 
   useEffect(() => {
     getTasks();
-  }, []);
+  }, [getTasks]);
 
   const handleChange = (e) => {
     setTask({

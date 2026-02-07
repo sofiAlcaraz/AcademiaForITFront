@@ -25,7 +25,7 @@ function Task() {
         setLoading(false);
       })
       .catch((error) => setErrorMessage(error.message));
-  }, []);
+  }, [apiBaseUrl, id]);
 
   return (
     <Box

@@ -13,9 +13,7 @@ function StatusFormSelect({ handleChange, status }) {
         label="Estado"
         onChange={handleChange}
       >
-        <MenuItem autoFocus value={"Pendiente"}>
-          Pendiente
-        </MenuItem>
+        <MenuItem value={"Pendiente"}>Pendiente</MenuItem>
         <MenuItem value={"En Progreso"}>En progreso</MenuItem>
         <MenuItem value={"Terminado"}>Terminado</MenuItem>
       </Select>
