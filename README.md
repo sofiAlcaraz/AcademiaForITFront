@@ -18,9 +18,10 @@ Puedes instalar todas las dependencias ejecutando:
 
 ## Scripts para correr el proyecto
 
-1. npm run dev
+1. npm install
+2. npm run dev
 
-- start: ejecuta el proyecto
+- dev: ejecuta el proyecto
 
 ---
 
@@ -42,10 +43,14 @@ Puedes instalar todas las dependencias ejecutando:
 
 ![Imagen crear tarea exitoso](./src/assets/createSuccessImage.png)
 
+![Imagen formulario campo requerido](./src/assets/formRequiredImage.png)
+
 ### Editar tarea
 
 ![Imagen formulario editar tarea](./src/assets/formEditImage.png)
 ![Imagen editar tarea exitoso](./src/assets/editSuccessImage.png)
+
+![Imagen formulario campo requerido](./src/assets/formRequiredImage.png)
 
 ### Borrar tarea
 
